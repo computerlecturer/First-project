@@ -1,0 +1,24 @@
+$(document).ready(function(){
+
+    $("header nav ul.gnb>li").hover(function(){
+        $("ul.sub").stop().slideDown();
+    },function(){
+        $("ul.sub").stop().slideUp();
+    });
+
+    $(".slide ul.slide_all>li").eq(0).siblings().css("top","-300px");
+
+    var slideI=0;
+    setInterval(function(){
+        if(slideI<2){
+            slideI++;
+        }else{
+            slideI=0;
+        }
+    $(".slide ul.slide_all>li").eq(0).siblings().css("top","-300px");
+    $(".slide ul.slide_all>li").eq(slideI).animate({"top":"0"},500);
+
+    },3000);
+
+
+});
